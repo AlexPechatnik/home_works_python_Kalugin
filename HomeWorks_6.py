@@ -6,9 +6,24 @@
 # Вам требуется написать программу, которая проверяет счастливость билета.
 
 # number = int(input("Введите шестизначное число : "))
+
 number = int(385916)
 
-digit1 = number // 100
-digit2 = (number // 10) % 10
-digit3 = number % 10 
-print(digit1, digit2, digit3)
+half_length = len(number) // 2
+first_half = number[:half_length]
+second_half = number[half_length:]
+
+first_half = number // 100
+first_half = (number // 10) % 10
+first_half = number % 10 
+sum_first = digit1 + digit2 + digit3
+
+first_half = number // 100
+first_half = (number // 10) % 10
+first_half = number % 10 
+sum_second = digit1 + digit2 + digit3
+
+while sum_first == second_half:
+    print('Счастливый билет! ')
+else:
+    print('Билет не считается счастливым! ')
