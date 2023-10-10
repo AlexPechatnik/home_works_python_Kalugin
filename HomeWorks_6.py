@@ -5,25 +5,26 @@
 # Т.е. билет с номером 385916 – счастливый, т.к. 3+8+5=9+1+6. 
 # Вам требуется написать программу, которая проверяет счастливость билета.
 
-# number = int(input("Введите шестизначное число : "))
-
-number = int(385916)
+number = input("Введите шестизначное число : ")
 
 half_length = len(number) // 2
-first_half = number[:half_length]
-second_half = number[half_length:]
+first_half = int(number[:half_length])
+second_half = int(number[half_length:])
 
-first_half = number // 100
-first_half = (number // 10) % 10
-first_half = number % 10 
-sum_first = digit1 + digit2 + digit3
+f_digit1 = first_half // 100
+f_digit2 = (first_half // 10) % 10
+f_digit3 = first_half % 10 
+sum_first = f_digit1 + f_digit2 + f_digit3
 
-first_half = number // 100
-first_half = (number // 10) % 10
-first_half = number % 10 
-sum_second = digit1 + digit2 + digit3
+s_digit1 = second_half // 100
+s_digit2 = (second_half // 10) % 10
+s_digit3 = second_half % 10 
+sum_second = s_digit1 + s_digit2 + s_digit3
 
-while sum_first == second_half:
+while sum_first == sum_second:
     print('Счастливый билет! ')
+    print(f'{sum_first} - {sum_second}')
+    break
 else:
     print('Билет не считается счастливым! ')
+    print(f'{sum_first} - {sum_second}')
